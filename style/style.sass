@@ -1,0 +1,63 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    min-height: 100vh
+    background: linear-gradient(-45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000)
+    overflow: hidden
+    background-size: 400% 400%
+    position: relative
+    animation: change 60s ease-in-out infinite
+
+@keyframes change
+    0%
+        background-position: 0 50%
+
+    50%
+        background-position: 100% 50%
+
+    100%
+        background-position: 0 50%
+
+.container
+    position: relative
+    height: 100hv
+    overflow: hidden
+    animation: animate 4s linear infinite
+
+@keyframes animate
+    0%
+        filter: hue-rotate(0deg)
+
+    100%
+        filter: hue-rotate(360deg)
+
+.row
+    display: inline-flex
+    margin-top: -32px
+    margin-left: -50px
+    &:nth-child(even)
+        margin-left: 1px
+
+.hexagon
+    position: relative
+    width: 100px
+    height: 110px
+    background: #111
+    margin: 1px
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+    transition: 2s
+    &:hover
+        cursor: pointer
+        transition: 0s
+        background-color: #0f0
+
+    &:before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 50%
+        height: 100%
